@@ -61,8 +61,8 @@ const Home = () => {
           </div>
 
           <div className=" grid grid-cols-3 gap-x-3 gap-y-6">
-            {products.map((db) => (
-              <ProductCard image={db.image} title={db.title} newProduct={db.newProduct} stock={db.stock} like={db.like}  />
+            {products.map((db,index) => (
+              <ProductCard image={db.image} title={db.title} newProduct={db.newProduct} stock={db.stock} like={db.like}  key={index}/>
             ))}
           </div>
         </div>
