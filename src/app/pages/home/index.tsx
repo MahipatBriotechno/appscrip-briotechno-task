@@ -8,15 +8,15 @@ import product3 from "../../assets/products/product3.png";
 
 const Home = () => {
   const products = [
-    { image: product1, title: "PPXOC Milkyway dress in pressed flowers" },
-    { image: product2, title: "PPXOC Milkyway dress in pressed flowers" },
-    { image: product3, title: "Product Name" },
-    { image: product1, title: "PPXOC Milkyway dress in pressed flowers" },
-    { image: product2, title: "PPXOC Milkyway dress in pressed flowers" },
-    { image: product3, title: "Product Name" },
-    { image: product1, title: "PPXOC Milkyway dress in pressed flowers" },
-    { image: product2, title: "PPXOC Milkyway dress in pressed flowers" },
-    { image: product3, title: "Product Name" },
+    { image: product1, title: "PPXOC Milkyway dress in pressed flowers", newProduct: true, stock: 3 },
+    { image: product2, title: "PPXOC Milkyway dress in pressed flowers", newProduct: false, stock: 0 },
+    { image: product3, title: "Product Name", newProduct: false, stock: 3 },
+    { image: product1, title: "PPXOC Milkyway dress in pressed flowers", newProduct: false, stock: 3  },
+    { image: product2, title: "PPXOC Milkyway dress in pressed flowers", newProduct: false, stock: 3  },
+    { image: product3, title: "Product Name", newProduct: false, stock: 3  },
+    { image: product1, title: "PPXOC Milkyway dress in pressed flowers", newProduct: false, stock: 3  },
+    { image: product2, title: "PPXOC Milkyway dress in pressed flowers", newProduct: false, stock: 3  },
+    { image: product3, title: "Product Name", newProduct: false, stock: 3  },
   ];
   return (
     <div>
@@ -32,7 +32,7 @@ const Home = () => {
       </div>
       {/* Header Filter  */}
       <Container>
-        <div className="border-t-[1px] border-b-[1px] border-[#E5E5E5] py-6">
+        <div className="border-t-[1px] border-b-[1px] border-[#E5E5E5] py-6 mb-6">
           <HeaderFilter
             items={[
               { label: "3425 Items", href: "" },
@@ -47,7 +47,7 @@ const Home = () => {
           <div className="w-[300px]"></div>
           <div className=" grid grid-cols-3 gap-x-3 gap-y-6">
             {products.map((db) => (
-              <ProductCard image={db.image} title={db.title} />
+              <ProductCard image={db.image} title={db.title} newProduct={db.newProduct} stock={db.stock}  />
             ))}
           </div>
         </div>
