@@ -5,6 +5,7 @@ import ProductCard from "@/app/components/productCard";
 import product1 from "../../assets/products/product1.png";
 import product2 from "../../assets/products/product2.png";
 import product3 from "../../assets/products/product3.png";
+import CheckboxWithLabel from "@/app/components/Checkbox";
 
 const Home = () => {
   const products = [
@@ -38,6 +39,7 @@ const Home = () => {
               { label: "3425 Items", href: "" },
               { label: "HIDE FILTER", href: "" },
             ]}
+            
           />
         </div>
       </Container>
@@ -46,7 +48,7 @@ const Home = () => {
           {/* Filter  */}
           <div className="w-2/6">
             <div>
-
+             <CheckboxWithLabel id="test" label="Customizble"/>
             </div>
             <Accordion title="IDEAL FOR">test</Accordion>
             <Accordion title="occasion">test</Accordion>

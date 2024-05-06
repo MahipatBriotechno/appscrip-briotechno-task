@@ -1,4 +1,3 @@
-// components/Accordion.js
 "use client";
 import { useState } from "react";
 
