@@ -1,7 +1,7 @@
+import Accordion from "@/app/components/Accordion";
 import HeaderFilter from "@/app/components/HeaderFilter";
 import { Container } from "@/app/components/container";
 import ProductCard from "@/app/components/productCard";
-import React from "react";
 import product1 from "../../assets/products/product1.png";
 import product2 from "../../assets/products/product2.png";
 import product3 from "../../assets/products/product3.png";
@@ -44,7 +44,20 @@ const Home = () => {
       <Container>
         <div className=" flex gap-5">
           {/* Filter  */}
-          <div className="w-[300px]"></div>
+          <div className="w-2/6">
+            <div>
+
+            </div>
+            <Accordion title="IDEAL FOR">test</Accordion>
+            <Accordion title="occasion">test</Accordion>
+            <Accordion title="work">test</Accordion>
+            <Accordion title="fabric">test</Accordion>
+            <Accordion title="segment">test</Accordion>
+            <Accordion title="suitable for">test</Accordion>
+            <Accordion title="raw materials">test</Accordion>
+            <Accordion title="Pattern">test</Accordion>
+          </div>
+
           <div className=" grid grid-cols-3 gap-x-3 gap-y-6">
             {products.map((db) => (
               <ProductCard image={db.image} title={db.title} />
