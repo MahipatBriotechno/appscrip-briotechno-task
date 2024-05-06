@@ -9,18 +9,18 @@ import CheckboxWithLabel from "@/app/components/Checkbox";
 
 const Home = () => {
   const products = [
-    { image: product1, title: "PPXOC Milkyway dress in pressed flowers", newProduct: true, stock: 3 },
-    { image: product2, title: "PPXOC Milkyway dress in pressed flowers", newProduct: false, stock: 0 },
-    { image: product3, title: "Product Name", newProduct: false, stock: 3 },
-    { image: product1, title: "PPXOC Milkyway dress in pressed flowers", newProduct: false, stock: 3  },
-    { image: product2, title: "PPXOC Milkyway dress in pressed flowers", newProduct: false, stock: 3  },
-    { image: product3, title: "Product Name", newProduct: false, stock: 3  },
-    { image: product1, title: "PPXOC Milkyway dress in pressed flowers", newProduct: false, stock: 3  },
-    { image: product2, title: "PPXOC Milkyway dress in pressed flowers", newProduct: false, stock: 3  },
-    { image: product3, title: "Product Name", newProduct: false, stock: 3  },
+    { image: product1, title: "PPXOC Milkyway dress in pressed flowers", newProduct: true, stock: 3, like: false },
+    { image: product2, title: "PPXOC Milkyway dress in pressed flowers", newProduct: false, stock: 0, like: false },
+    { image: product3, title: "Product Name", newProduct: false, stock: 3, like: true },
+    { image: product1, title: "PPXOC Milkyway dress in pressed flowers", newProduct: false, stock: 3, like: false  },
+    { image: product2, title: "PPXOC Milkyway dress in pressed flowers", newProduct: false, stock: 3, like: false  },
+    { image: product3, title: "Product Name", newProduct: false, stock: 3, like: false  },
+    { image: product1, title: "PPXOC Milkyway dress in pressed flowers", newProduct: false, stock: 3, like: false  },
+    { image: product2, title: "PPXOC Milkyway dress in pressed flowers", newProduct: false, stock: 3, like: false  },
+    { image: product3, title: "Product Name", newProduct: false, stock: 3, like: false  },
   ];
   return (
-    <div>
+    <div className="pb-10">
       <div className="max-w-[840px] mx-auto text-center py-12">
         <h1 className="font-normal text-[60px] mb-5 leading-[72px] font-simplon">
           DISCOVER OUR PRODUCTS
@@ -46,7 +46,7 @@ const Home = () => {
       <Container>
         <div className=" flex gap-5">
           {/* Filter  */}
-          <div className="w-2/6">
+          <div className="w-[28%]">
             <div>
              <CheckboxWithLabel id="test" label="Customizble"/>
             </div>
@@ -62,7 +62,7 @@ const Home = () => {
 
           <div className=" grid grid-cols-3 gap-x-3 gap-y-6">
             {products.map((db) => (
-              <ProductCard image={db.image} title={db.title} newProduct={db.newProduct} stock={db.stock}  />
+              <ProductCard image={db.image} title={db.title} newProduct={db.newProduct} stock={db.stock} like={db.like}  />
             ))}
           </div>
         </div>
