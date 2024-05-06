@@ -7,6 +7,28 @@ body {
   font-family: 'Simplon Norm', sans-serif !important;
 }
 
+@font-face { 
+  font-family: "Simplon Norm"; 
+  src: url('./fonts/Woff/SimplonNorm-Bold-WebTrial.woff'); 
+ 
+} 
+@font-face { 
+  font-family: "Simplon Norm"; 
+  src: url('./fonts/Woff/SimplonNorm-Light-WebTrial.woff'); 
+ 
+} 
+@font-face { 
+  font-family: "Simplon Norm"; 
+  src: url('./fonts/Woff/SimplonNorm-Medium-WebTrial.woff'); 
+ 
+} 
+@font-face { 
+  font-family: "Simplon Norm"; 
+  src: url('./fonts/Woff/SimplonNorm-Regular-WebTrial.woff'); 
+ 
+} 
+
+
 
 
 /* :root {
