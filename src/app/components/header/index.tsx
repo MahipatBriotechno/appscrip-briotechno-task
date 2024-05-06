@@ -45,7 +45,7 @@ const Header = () => {
             {/* Logo etc  */}
             <div className="mb-10 flex items-center justify-between">
               <Image src={headerleftlogo} alt={""} />
-              <Image src={LOGO} alt={""} />
+              <Image src={LOGO} alt={""} className="ml-[120px]" />
               <div className="flex gap-6 items-center">
                 <Image src={searchNormal} alt={""} />
                 <Image src={heart} alt={""} />
