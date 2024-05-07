@@ -5,6 +5,7 @@ import ProductCard from "@/app/components/productCard";
 import product1 from "../../assets/products/product1.png";
 import product2 from "../../assets/products/product2.png";
 import product3 from "../../assets/products/product3.png";
+import CheckboxWithLabel from "@/app/components/Checkbox";
 
 const Home = () => {
   const products = [
@@ -38,6 +39,7 @@ const Home = () => {
               { label: "3425 Items", href: "" },
               { label: "HIDE FILTER", href: "" },
             ]}
+            
           />
         </div>
       </Container>
@@ -46,7 +48,7 @@ const Home = () => {
           {/* Filter  */}
           <div className="w-[28%]">
             <div>
-
+             <CheckboxWithLabel id="test" label="Customizble"/>
             </div>
             <Accordion title="IDEAL FOR">test</Accordion>
             <Accordion title="occasion">test</Accordion>
@@ -59,8 +61,8 @@ const Home = () => {
           </div>
 
           <div className=" grid grid-cols-3 gap-x-3 gap-y-6">
-            {products.map((db) => (
-              <ProductCard image={db.image} title={db.title} newProduct={db.newProduct} stock={db.stock} like={db.like}  />
+            {products.map((db,index) => (
+              <ProductCard image={db.image} title={db.title} newProduct={db.newProduct} stock={db.stock} like={db.like}  key={index}/>
             ))}
           </div>
         </div>

@@ -1,8 +1,9 @@
+"use client"
 import Image from "next/image";
 import React from "react";
 import heart from "../../assets/svg/heart.svg";
 import heartRed from "../../assets/svg/heart-red.svg";
-
+import WishlistHeartButton from "../WishlistHeartButton";
 
 interface ProductCardProps {
   image: any; // Path to the image
@@ -21,6 +22,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <div className="w-full group">
+      
       {" "}
       {/* 'group' is needed for nested hover effects */}
       <div
@@ -58,7 +60,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <h6 className="text-gray-600 text-sm font-normal">
             Sign in or Create an account to see pricing
           </h6>
-          {like ? <Image src={heartRed} alt="" /> : <Image src={heart} alt="" />}
+          {/* {like ? <Image src={heartRed} alt="" /> : <Image src={heart} alt="" />} */}
+          <WishlistHeartButton/>
         </div>
       </div>
     </div>
