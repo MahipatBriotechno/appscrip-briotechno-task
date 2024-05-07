@@ -58,7 +58,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             {title}
           </h4>
           <h6 className="text-gray-600 text-[10px] lg:text-sm font-normal">
-            <Link href="#">Sign in</Link> or Create an account to see pricing
+            <Link href="#" className="underline">Sign in</Link> or Create an account to see pricing
           </h6>
           {/* {like ? <Image src={heartRed} alt="" /> : <Image src={heart} alt="" />} */}
         </div>
