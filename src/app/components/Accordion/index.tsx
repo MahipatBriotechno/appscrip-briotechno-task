@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Accordion = ({ title, children, isShow }: any) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +24,8 @@ const Accordion = ({ title, children, isShow }: any) => {
               className={`h-5 w-5 opacity-75 ${isOpen ? "transform rotate-180" : ""}`}
               fill="none"
               viewBox="0 0 24 24"
-              stroke="#292D32"
+              stroke={'#292D32'}
+              
             >
               <path
                 strokeLinecap="round"
