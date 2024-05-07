@@ -35,7 +35,7 @@ const DropdownMenu = ({
         className="px-0 py-1 bg-transparent border-none border-gray-300 rounded focus:outline-none focus:ring-0 focus:border-blue-500 text-base font-bold"
       >
         {options.map((opt: any) => (
-          <option key={opt.code} value={opt.code}>
+          <option key={opt.code} value={opt.code} className="uppercase">
             {opt.label}
           </option>
         ))}
