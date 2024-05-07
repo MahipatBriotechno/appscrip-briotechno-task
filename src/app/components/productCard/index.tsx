@@ -46,7 +46,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           )}
 
           {stock === 0 && (
-            <div className="text-xl text-center font-bold absolute top-[40%] bg-white h-[70px] w-full flex justify-center items-center">
+            <div className=" text-xl text-center font-bold absolute top-[40%] bg-white h-[70px] w-full flex justify-center items-center">
               OUT OF STOCK
             </div>
           )}

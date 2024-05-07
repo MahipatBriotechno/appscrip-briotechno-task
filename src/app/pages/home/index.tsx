@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Accordion from "@/app/components/Accordion";
 import HeaderFilter from "@/app/components/HeaderFilter";
@@ -10,6 +10,7 @@ import product3 from "../../assets/products/product3.png";
 import CheckboxWithLabel from "@/app/components/Checkbox";
 import DropdownMenu from "@/app/components/shared/DropdownMenu";
 import { useState } from "react";
+import NormalLabel from "@/app/components/Checkbox/NormalLabel";
 
 const Home = () => {
   const products = [
@@ -82,6 +83,10 @@ const Home = () => {
 
   const languages = [
     { code: "re", label: "RECOMMENDED" },
+    { code: "re", label: "Newest first" },
+    { code: "re", label: "popular" },
+    { code: "re", label: "Price : high to low" },
+    { code: "re", label: "Price : low to high" },
   ];
 
   const handleLanguageChange = (event: any) => {
@@ -127,8 +132,31 @@ const Home = () => {
             <div>
               <CheckboxWithLabel id="test" label="Customizble" />
             </div>
-            <Accordion title="IDEAL FOR">test</Accordion>
-            <Accordion title="occasion">test</Accordion>
+            <Accordion title="IDEAL FOR">
+              <div className="flex flex-col gap-4">
+                <span className="text-base font-normal text-[#BFC8CD] underline font-simplon">
+                  Unselect all
+                </span>
+                <div>
+                  <NormalLabel id="men" label="Men" />
+                  <NormalLabel id="men" label="Women" />
+                  <NormalLabel id="men" label="Baby & Kids" />
+                </div>
+              </div>
+            </Accordion>
+            <Accordion title="occasion">
+              {" "}
+              <div className="flex flex-col gap-4">
+                <span className="text-base font-normal text-[#BFC8CD] underline font-simplon">
+                  Unselect all
+                </span>
+                <div>
+                  <NormalLabel id="men" label="Men" />
+                  <NormalLabel id="men" label="Women" />
+                  <NormalLabel id="men" label="Baby & Kids" />
+                </div>
+              </div>
+            </Accordion>
             <Accordion title="work">test</Accordion>
             <Accordion title="fabric">test</Accordion>
             <Accordion title="segment">test</Accordion>
