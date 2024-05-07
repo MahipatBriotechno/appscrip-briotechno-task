@@ -91,16 +91,18 @@ const Home = () => {
 
   return (
     <div className="pb-10">
+      <Container>
       <div className="max-w-[748px] mx-auto text-center py-12">
-        <h1 className="font-normal text-[60px] mb-5 leading-[72px] font-simplon">
+        <h1 className="font-normal text-2xl leading-7 lg:text-[60px] mb-5 lg:leading-[72px] font-simplon">
           DISCOVER OUR PRODUCTS
         </h1>
-        <h2 className="font-normal text-[22px] leading-10 font-simplon">
+        <h2 className="font-normal text-base leading-[22px] lg:text-[22px] lg:leading-10 font-simplon">
           Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus
           scelerisque. Dolor integer scelerisque nibh amet mi ut elementum
           dolor.
         </h2>
       </div>
+      </Container>
       {/* Header Filter  */}
       <Container>
         <div className="flex justify-between border-t-[1px] border-b-[1px] border-[#E5E5E5] py-6 mb-6">
@@ -121,7 +123,7 @@ const Home = () => {
       <Container>
         <div className=" flex gap-5">
           {/* Filter  */}
-          <div className="w-[28%]">
+          <div className="w-[28%] xs:hidden  sm:hidden md:hidden ">
             <div>
               <CheckboxWithLabel id="test" label="Customizble" />
             </div>
@@ -135,7 +137,7 @@ const Home = () => {
             <Accordion title="Pattern">test</Accordion>
           </div>
 
-          <div className=" grid grid-cols-3 gap-x-3 gap-y-6">
+          <div className=" grid grid-cols-2 lg:grid-cols-3 gap-x-3 gap-y-6">
             {products.map((db, index) => (
               <ProductCard
                 image={db.image}

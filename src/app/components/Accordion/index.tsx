@@ -9,7 +9,7 @@ const Accordion = ({ title, children }: any) => {
   };
 
   return (
-    <div className="border-t mt-2">
+    <div className="border-t 11t-2">
       <div
         className="flex justify-between p-4 cursor-pointer"
         onClick={toggleAccordion}
@@ -32,7 +32,7 @@ const Accordion = ({ title, children }: any) => {
               />
             </svg>
           </div>
-          <span className="text-lg font-medium">All</span>
+          {/* <span className="text-lg font-medium">All</span> */}
         </div>
       </div>
       {isOpen && <div className="p-4 border-t">{children}</div>}
