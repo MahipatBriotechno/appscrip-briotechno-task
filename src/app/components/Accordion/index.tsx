@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-const Accordion = ({ title, children }: any) => {
+const Accordion = ({ title, children, isShow }: any) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
@@ -16,7 +16,7 @@ const Accordion = ({ title, children }: any) => {
       >
         <div className="w-full mt-1 mb-1">
           <div className="flex justify-between w-full">
-            <h2 className="text-lg font-bold uppercase">{title}</h2>
+            <h2 className=" text-lg font-bold uppercase">{title}</h2>
            
 
             <svg
@@ -34,7 +34,7 @@ const Accordion = ({ title, children }: any) => {
               />
             </svg>
           </div>
-          <span className="text-lg font-medium text-[#252020]">All</span>
+          {isShow && <span className="text-lg font-medium text-[#252020]">All</span> }
         </div>
       </div>
       {isOpen && <div className="p-4 pl-0 pt-0">{children}</div>}
