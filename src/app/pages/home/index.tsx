@@ -17,6 +17,8 @@ import Breadcrumbs from "@/app/components/Breadcrumbs";
 const Home = () => {
   const [isshow, setShow] = useState<boolean>(true);
   const [isOpen, setIsOpen] = useState(false);
+
+  const [isCheck, setCheck] = useState(false);
   const products = [
     {
       image: product1,
@@ -112,10 +114,11 @@ const Home = () => {
             <span className="text-base font-normal text-[#BFC8CD] underline font-simplon">
               Unselect all
             </span>
+
             <div>
               <NormalLabel id="men" label="Men" />
-              <NormalLabel id="men" label="Women" />
-              <NormalLabel id="men" label="Baby & Kids" />
+              <NormalLabel id="Women" label="Women" />
+              <NormalLabel id="Baby & Kids" label="Baby & Kids" />
             </div>
           </div>
         </Accordion>
