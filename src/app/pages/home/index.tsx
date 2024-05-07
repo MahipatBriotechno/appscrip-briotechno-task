@@ -12,6 +12,7 @@ import product2 from "../../assets/products/product2.png";
 import product3 from "../../assets/products/product3.png";
 import { useState } from "react";
 import FilterDrawer from "@/app/components/FilterDrawer";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
 
 const Home = () => {
   const [isshow, setShow] = useState<boolean>(true);
@@ -82,6 +83,11 @@ const Home = () => {
     },
   ];
 
+  const breadcrumbItems = [
+    { label: "HOME", href: "/" },
+    { label: "SHOP", href: "/shop" },
+  ];
+
   const options = [
     { label: "RECOMMENDED", value: "RECOMMENDED" },
     { label: "Newest first", value: "Newest first" },
@@ -94,6 +100,7 @@ const Home = () => {
     // Do something with the selected option
   };
 
+  // Filter Content
   const FilterContent = () => {
     return (
       <div>
@@ -149,7 +156,10 @@ const Home = () => {
   return (
     <div className="pb-10">
       <Container>
-        <div className="max-w-[748px] mx-auto text-center py-12">
+        <div className="lg:hidden pt-4">
+          <Breadcrumbs items={breadcrumbItems} />
+        </div>
+        <div className="max-w-[748px] mx-auto text-center pb-6 lg:py-12">
           <h1 className="font-normal text-2xl leading-7 lg:text-[60px] mb-5 lg:leading-[72px] font-simplon">
             DISCOVER OUR PRODUCTS
           </h1>
@@ -162,7 +172,7 @@ const Home = () => {
       </Container>
       {/* Header Filter  */}
       <Container>
-        <div className="flex justify-between border-t-[1px] border-b-[1px] border-[#E5E5E5] py-6 mb-6">
+        <div className="flex justify-between border-t-[1px] border-b-[1px] border-[#E5E5E5] py-2 lg:py-6 mb-6">
           <div className="hidden lg:block">
             <HeaderFilter
               items={[
@@ -182,7 +192,7 @@ const Home = () => {
           <SelectPopover
             options={options}
             onSelect={handleSelect}
-            className={"w-[200px]"}
+            className={" lg:w-[200px]"}
           />
           {/* <DropdownMenu
             selectedOption={selectedLanguage}
@@ -242,7 +252,9 @@ const Home = () => {
 
           <div
             className={`grid ${
-              isshow ? "grid-cols-2 lg:grid-cols-3" : "grid-cols-2 lg:grid-cols-4"
+              isshow
+                ? "grid-cols-2 lg:grid-cols-3"
+                : "grid-cols-2 lg:grid-cols-4"
             } gap-x-3 gap-y-6`}
           >
             {products.map((db, index) => (

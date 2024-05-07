@@ -11,7 +11,7 @@ const Accordion = ({ title, children, isShow }: any) => {
   return (
     <div className="border-t 11t-2">
       <div
-        className="flex justify-between p-4 pb-2 pl-0 cursor-pointer"
+        className="flex justify-between p-2 lg:p-4 pb-2 pl-0 cursor-pointer"
         onClick={toggleAccordion}
       >
         <div className="w-full mt-1 mb-1">

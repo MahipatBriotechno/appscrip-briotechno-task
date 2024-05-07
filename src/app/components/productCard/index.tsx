@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React from "react";
 import heart from "../../assets/svg/heart.svg";
@@ -22,7 +22,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <div className="w-full group">
-      
       {" "}
       {/* 'group' is needed for nested hover effects */}
       <div
@@ -52,17 +51,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
           )}
         </div>
       </div>
-      <div>
-        <h4 className="text-sm lg:text-lg font-bold leading-5 line-clamp-1 mb-2">
-          {title}
-        </h4>
-        <div className="flex items-center justify-between gap-2">
+      <div className="flex items-start lg:items-end justify-between gap-2">
+        <div>
+          <h4 className="text-sm lg:text-lg font-bold leading-5 line-clamp-1 mb-2">
+            {title}
+          </h4>
           <h6 className="text-gray-600 text-[10px] lg:text-sm font-normal">
             Sign in or Create an account to see pricing
           </h6>
           {/* {like ? <Image src={heartRed} alt="" /> : <Image src={heart} alt="" />} */}
-          <WishlistHeartButton/>
         </div>
+        <WishlistHeartButton />
       </div>
     </div>
   );

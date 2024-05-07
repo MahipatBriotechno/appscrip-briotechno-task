@@ -19,14 +19,12 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
           const isLast = index === items.length - 1;
 
           return (
-            <li key={index} className="flex items-center">
-              <Link href={item.href}>
-                <a className={`hover:underline ${isLast ? 'text-gray-400' : 'text-blue-600'}`}>
+            <li key={index} className="flex items-center text-sm font-normal">
+              <Link href={item.href} className={`hover:underline ${isLast ? 'text-black' : 'text-[#BFC8CD]'}`}>
                   {item.label}
-                </a>
               </Link>
               {/* Render a separator unless it's the last item */}
-              {!isLast && <span className="mx-2">/</span>}
+              {!isLast && <span className="mx-[6px] text-[#BFC8CD]">|</span>}
             </li>
           );
         })}
