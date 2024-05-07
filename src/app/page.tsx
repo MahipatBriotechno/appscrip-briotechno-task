@@ -17,7 +17,7 @@ export default function App() {
 
       <Header />
       <Home />
-      {/* <Footer /> */}
+      <Footer />
     </main>
   );
 }
