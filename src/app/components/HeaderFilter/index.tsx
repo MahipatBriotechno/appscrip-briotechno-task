@@ -26,7 +26,7 @@ const HeaderFilter: React.FC<HeaderFilterProps> = ({
               <Link
                 href={item.href}
                 className={`${
-                  isLast ? "text-gray-500" : "text-black-600 font-bold"
+                  isLast ? "text-gray-500 underline" : "text-black-600 font-bold"
                 } hover:underline`}
                
               >

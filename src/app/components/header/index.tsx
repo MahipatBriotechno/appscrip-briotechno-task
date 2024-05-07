@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import MobileDrawer from "./MobileDrawer";
 import GreyStrip from "./GreyStrip";
 import Link from "next/link";
@@ -11,8 +11,23 @@ import searchNormal from "../../assets/svg/search-normal.svg";
 import heart from "../../assets/svg/heart.svg";
 import profile from "../../assets/svg/profile.svg";
 import shoppingBag from "../../assets/svg/shopping-bag.svg";
+import DropdownMenu from "../shared/DropdownMenu";
 
 const Header = () => {
+  const [selectedLanguage, setSelectedLanguage] = useState("en");
+
+  const languages = [
+    { code: "en", label: "ENG" },
+    { code: "es", label: "ESP" },
+    { code: "fr", label: "FRA" },
+    { code: "de", label: "DEU" },
+  ];
+
+  const handleLanguageChange = (event: any) => {
+    const selectedCode = event.target.value;
+    setSelectedLanguage(selectedCode);
+  };
+
   const MenuItem = [
     {
       title: "SHOP",
@@ -44,13 +59,21 @@ const Header = () => {
           <div className="xs:hidden sm:hidden md:hidden block  pb-5 pt-7">
             {/* Logo etc  */}
             <div className="mb-10 flex items-center justify-between">
-              <Image src={headerleftlogo} alt={""} />
-              <Image src={LOGO} alt={""} className="ml-[120px]" />
+              <div className="w-[242px]">
+                <Image src={headerleftlogo} alt={""} />
+              </div>
+              <Image src={LOGO} alt={""} className="" />
               <div className="flex gap-6 items-center">
                 <Image src={searchNormal} alt={""} />
                 <Image src={heart} alt={""} />
                 <Image src={shoppingBag} alt={""} />
                 <Image src={profile} alt={""} />
+              
+                <DropdownMenu
+                  selectedOption={selectedLanguage}
+                  options={languages}
+                  handleChange={handleLanguageChange}
+                />
               </div>
             </div>
 
