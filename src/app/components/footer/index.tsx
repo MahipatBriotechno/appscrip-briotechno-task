@@ -33,7 +33,7 @@ const Footer = () => {
               <input
                 type="text"
                 placeholder="Enter your e-mail..."
-                className="bg-white h-12 w-[384px] max-w-full px-2"
+                className="bg-white h-12 w-[384px] max-w-full px-2 text-black"
               />
               <button
                 className="h-12 w-[184px] border-[1px] border-white rounded-[5px] opacity-40"

@@ -56,7 +56,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <h4 className="text-lg font-bold leading-5 line-clamp-1 mb-2">
           {title}
         </h4>
-        <div className="flex items-center gap-5">
+        <div className="flex items-center justify-between gap-2">
           <h6 className="text-gray-600 text-sm font-normal">
             Sign in or Create an account to see pricing
           </h6>
