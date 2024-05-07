@@ -12,6 +12,7 @@ import heart from "../../assets/svg/heart.svg";
 import profile from "../../assets/svg/profile.svg";
 import shoppingBag from "../../assets/svg/shopping-bag.svg";
 import DropdownMenu from "../shared/DropdownMenu";
+import SelectPopover from "../shared/Select";
 
 const Header = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("en");
@@ -22,7 +23,15 @@ const Header = () => {
     { code: "fr", label: "FRA" },
     { code: "de", label: "DEU" },
   ];
-
+  const options = [
+    { label: "ENG", value: "ENG" },
+    { label: "FRA", value: "FRA" },
+    { label: "DEU", value: "DEU" },
+  ];
+  const handleSelect = (option: any) => {
+    console.log("Selected option:", option);
+    // Do something with the selected option
+  };
   const handleLanguageChange = (event: any) => {
     const selectedCode = event.target.value;
     setSelectedLanguage(selectedCode);
@@ -68,12 +77,18 @@ const Header = () => {
                 <Image src={heart} alt={""} />
                 <Image src={shoppingBag} alt={""} />
                 <Image src={profile} alt={""} />
-              
-                <DropdownMenu
+                <div className="mt-1">
+                  <SelectPopover
+                    options={options}
+                    onSelect={handleSelect}
+                    className={"w-auto"}
+                  />
+                </div>
+                {/* <DropdownMenu
                   selectedOption={selectedLanguage}
                   options={languages}
                   handleChange={handleLanguageChange}
-                />
+                /> */}
               </div>
             </div>
 
