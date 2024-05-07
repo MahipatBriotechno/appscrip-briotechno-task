@@ -9,13 +9,10 @@ interface BreadcrumbItem {
 
 interface HeaderFilterProps {
   items: BreadcrumbItem[]; // Array of breadcrumb items
-
+  clickFilter: () => void;
 }
 
-const HeaderFilter: React.FC<HeaderFilterProps> = ({
-  items,
-  
-}) => {
+const HeaderFilter: React.FC<HeaderFilterProps> = ({ items, clickFilter }) => {
   return (
     <nav aria-label="Breadcrumb">
       <ol className="flex space-x-2">
@@ -23,15 +20,29 @@ const HeaderFilter: React.FC<HeaderFilterProps> = ({
           const isLast = index === items.length - 1; // Check if it's the last item
           return (
             <li key={index} className="flex items-center">
-              <Link
-                href={item.href}
-                className={`${
-                  isLast ? "text-gray-500 underline" : "text-black-600 font-bold"
-                } hover:underline`}
-               
-              >
-                {item.label}
-              </Link>
+              {item.label == "HIDE FILTER" || item.label == "SHOW FILTER" ? (
+                <button
+                  className={`${
+                    isLast
+                      ? "text-gray-500 underline"
+                      : "text-black-600 font-bold"
+                  } hover:underline`}
+                  onClick={clickFilter}
+                >
+                  {item.label}
+                </button>
+              ) : (
+                <button
+                  className={`${
+                    isLast
+                      ? "text-gray-500 underline"
+                      : "text-black-600 font-bold"
+                  } hover:underline`}
+                >
+                  {item.label}
+                </button>
+              )}
+
               {!isLast && (
                 <div className="ml-10">
                   <svg

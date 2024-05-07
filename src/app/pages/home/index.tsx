@@ -1,18 +1,19 @@
 "use client";
 
 import Accordion from "@/app/components/Accordion";
+import CheckboxWithLabel from "@/app/components/Checkbox";
+import NormalLabel from "@/app/components/Checkbox/NormalLabel";
 import HeaderFilter from "@/app/components/HeaderFilter";
 import { Container } from "@/app/components/container";
 import ProductCard from "@/app/components/productCard";
+import SelectPopover from "@/app/components/shared/Select";
 import product1 from "../../assets/products/product1.png";
 import product2 from "../../assets/products/product2.png";
 import product3 from "../../assets/products/product3.png";
-import CheckboxWithLabel from "@/app/components/Checkbox";
-import DropdownMenu from "@/app/components/shared/DropdownMenu";
 import { useState } from "react";
-import NormalLabel from "@/app/components/Checkbox/NormalLabel";
 
 const Home = () => {
+  const [isshow, setShow] = useState<boolean>(true);
   const products = [
     {
       image: product1,
@@ -79,19 +80,16 @@ const Home = () => {
     },
   ];
 
-  const [selectedLanguage, setSelectedLanguage] = useState("RECOMMENDED");
-
-  const languages = [
-    { code: "re", label: "RECOMMENDED" },
-    { code: "re", label: "Newest first" },
-    { code: "re", label: "popular" },
-    { code: "re", label: "Price : high to low" },
-    { code: "re", label: "Price : low to high" },
+  const options = [
+    { label: "RECOMMENDED", value: "RECOMMENDED" },
+    { label: "Newest first", value: "Newest first" },
+    { label: "popular", value: "popular" },
+    { label: "Price : high to low", value: "Price : high to low" },
+    { label: "Price : low to high", value: "Price : low to high" },
   ];
-
-  const handleLanguageChange = (event: any) => {
-    const selectedCode = event.target.value;
-    setSelectedLanguage(selectedCode);
+  const handleSelect = (option: any) => {
+    console.log("Selected option:", option);
+    // Do something with the selected option
   };
 
   return (
@@ -114,58 +112,69 @@ const Home = () => {
           <HeaderFilter
             items={[
               { label: "3425 Items", href: "" },
-              { label: "HIDE FILTER", href: "" },
+              { label: isshow ? "HIDE FILTER" : "SHOW FILTER", href: "" },
             ]}
+            clickFilter={() => setShow(!isshow)}
           />
-
-          <DropdownMenu
+          <SelectPopover
+            options={options}
+            onSelect={handleSelect}
+            className={"w-[200px]"}
+          />
+          {/* <DropdownMenu
             selectedOption={selectedLanguage}
             options={languages}
             handleChange={handleLanguageChange}
-          />
+          /> */}
         </div>
       </Container>
       <Container>
         <div className=" flex gap-5">
           {/* Filter  */}
-          <div className="w-[28%] xs:hidden  sm:hidden md:hidden ">
-            <div>
-              <CheckboxWithLabel id="test" label="Customizble" />
+          {isshow && (
+            <div className="w-[28%]">
+              <div>
+                <CheckboxWithLabel id="test" label="Customizble" />
+              </div>
+              <Accordion title="IDEAL FOR">
+                <div className="flex flex-col gap-4">
+                  <span className="text-base font-normal text-[#BFC8CD] underline font-simplon">
+                    Unselect all
+                  </span>
+                  <div>
+                    <NormalLabel id="men" label="Men" />
+                    <NormalLabel id="men" label="Women" />
+                    <NormalLabel id="men" label="Baby & Kids" />
+                  </div>
+                </div>
+              </Accordion>
+              <Accordion title="occasion">
+                {" "}
+                <div className="flex flex-col gap-4">
+                  <span className="text-base font-normal text-[#BFC8CD] underline font-simplon">
+                    Unselect all
+                  </span>
+                  <div>
+                    <NormalLabel id="men" label="Men" />
+                    <NormalLabel id="men" label="Women" />
+                    <NormalLabel id="men" label="Baby & Kids" />
+                  </div>
+                </div>
+              </Accordion>
+              <Accordion title="work">test</Accordion>
+              <Accordion title="fabric">test</Accordion>
+              <Accordion title="segment">test</Accordion>
+              <Accordion title="suitable for">test</Accordion>
+              <Accordion title="raw materials">test</Accordion>
+              <Accordion title="Pattern">test</Accordion>
             </div>
-            <Accordion title="IDEAL FOR">
-              <div className="flex flex-col gap-4">
-                <span className="text-base font-normal text-[#BFC8CD] underline font-simplon">
-                  Unselect all
-                </span>
-                <div>
-                  <NormalLabel id="men" label="Men" />
-                  <NormalLabel id="men" label="Women" />
-                  <NormalLabel id="men" label="Baby & Kids" />
-                </div>
-              </div>
-            </Accordion>
-            <Accordion title="occasion">
-              {" "}
-              <div className="flex flex-col gap-4">
-                <span className="text-base font-normal text-[#BFC8CD] underline font-simplon">
-                  Unselect all
-                </span>
-                <div>
-                  <NormalLabel id="men" label="Men" />
-                  <NormalLabel id="men" label="Women" />
-                  <NormalLabel id="men" label="Baby & Kids" />
-                </div>
-              </div>
-            </Accordion>
-            <Accordion title="work">test</Accordion>
-            <Accordion title="fabric">test</Accordion>
-            <Accordion title="segment">test</Accordion>
-            <Accordion title="suitable for">test</Accordion>
-            <Accordion title="raw materials">test</Accordion>
-            <Accordion title="Pattern">test</Accordion>
-          </div>
+          )}
 
-          <div className=" grid grid-cols-2 lg:grid-cols-3 gap-x-3 gap-y-6">
+          <div
+            className={`grid ${
+              isshow ? "grid-cols-3" : "grid-cols-4"
+            } gap-x-3 gap-y-6`}
+          >
             {products.map((db, index) => (
               <ProductCard
                 image={db.image}
