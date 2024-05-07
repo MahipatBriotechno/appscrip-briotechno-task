@@ -101,10 +101,11 @@ const Footer = () => {
           <div className="flex flex-col gap-4">
             <FooterTitle title="mettā muse" />
             <div className="flex gap-3 flex-col">
-              {mettaMuse.map((db: any) => {
+              {mettaMuse.map((db: any,index:any) => {
                 return (
                   <Link
                     href={db.link}
+                    key={index}
                     className="text-white text-lg font-normal"
                   >
                     {db.title}
@@ -116,10 +117,11 @@ const Footer = () => {
           <div className="flex flex-col gap-4 ">
             <FooterTitle title="QUICK LINKS" />
             <div className="flex gap-3 flex-col">
-              {quickLinks.map((db: any) => {
+              {quickLinks.map((db: any,index:any) => {
                 return (
                   <Link
                     href={db.link}
+                    key={index}
                     className="text-white text-lg font-normal"
                   >
                     {db.title}
@@ -156,10 +158,11 @@ const Footer = () => {
             <Accordion title="mettā muse">
               {/* <FooterTitle title="mettā muse" /> */}
               <div className="flex gap-3 flex-col">
-                {mettaMuse.map((db: any) => {
+                {mettaMuse.map((db: any,index:any) => {
                   return (
                     <Link
                       href={db.link}
+                      key={index}
                       className="text-white text-lg font-normal"
                     >
                       {db.title}
@@ -173,10 +176,11 @@ const Footer = () => {
             <Accordion title="QUICK LINKS">
               {/* <FooterTitle title="QUICK LINKS" /> */}
               <div className="flex gap-3 flex-col">
-                {quickLinks.map((db: any) => {
+                {quickLinks.map((db: any,index:any) => {
                   return (
                     <Link
                       href={db.link}
+                      key={index}
                       className="text-white text-lg font-normal"
                     >
                       {db.title}
