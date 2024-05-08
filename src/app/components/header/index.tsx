@@ -1,18 +1,17 @@
 "use client";
-import React, { useState } from "react";
-import MobileDrawer from "./MobileDrawer";
-import GreyStrip from "./GreyStrip";
-import Link from "next/link";
 import Image from "next/image";
-import { Container } from "../container";
-import headerleftlogo from "../../assets/svg/header-left-logo.svg";
+import Link from "next/link";
+import { useState } from "react";
 import LOGO from "../../assets/svg/LOGO.svg";
-import searchNormal from "../../assets/svg/search-normal.svg";
+import headerleftlogo from "../../assets/svg/header-left-logo.svg";
 import heart from "../../assets/svg/heart.svg";
 import profile from "../../assets/svg/profile.svg";
+import searchNormal from "../../assets/svg/search-normal.svg";
 import shoppingBag from "../../assets/svg/shopping-bag.svg";
-import DropdownMenu from "../shared/DropdownMenu";
+import { Container } from "../container";
 import SelectPopover from "../shared/Select";
+import GreyStrip from "./GreyStrip";
+import MobileDrawer from "./MobileDrawer";
 
 const Header = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("en");

@@ -1,7 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
-
-const Accordion = ({ title, children, isShow, isFooter }: any) => {
+import { useState } from "react";
+import React from 'react';
+const Accordion = ({ title, children, isShow, isFooter }:any) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
@@ -9,38 +9,37 @@ const Accordion = ({ title, children, isShow, isFooter }: any) => {
   };
 
   return (
-    <div className="border-t 11t-2">
+    <div className="border-top">
       <div
-        className="flex justify-between p-2 lg:p-4 pb-2 pl-0 cursor-pointer"
+        className="flex-between-padding"
         onClick={toggleAccordion}
       >
-        <div className="w-full mt-1 mb-1">
-          <div className="flex justify-between w-full">
-            <h2 className=" text-lg font-bold uppercase">{title}</h2>
-           
+        <div className="width-full-margin">
+          <div className="flex-between-padding">
+            <h2 className="text-large-bold-uppercase">{title}</h2>
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className={`h-5 w-5 opacity-75 ${isOpen ? "transform rotate-180" : ""}`}
+              className={`height-width opacity-seventy-five ${isOpen? "transform-rotate" : ""}`}
               fill="none"
               viewBox="0 0 24 24"
-              stroke={isFooter ? '#fff' : '#292D32'}
-              
+              stroke={isFooter? ".svg-stroke-color-footer" : ".svg-stroke-color"}
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M19 9l-7 7-7-7"
+                className="svg-path"
               />
             </svg>
           </div>
-          {isShow && <span className="text-lg font-medium text-[#252020]">All</span> }
+          {isShow && (
+            <span className="text-large-bold-uppercase">All</span>
+          )}
         </div>
       </div>
-      {isOpen && <div className="p-4 pl-0 pt-0">{children}</div>}
+      {isOpen && <div className="padding-4-pl-0-pt-0">{children}</div>}
     </div>
   );
 };
-
-export default Accordion;
+export default Accordion

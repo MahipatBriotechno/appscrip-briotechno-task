@@ -13,18 +13,19 @@ interface BreadcrumbsProps {
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
   return (
-    <nav aria-label="Breadcrumb" className="mb-4">
-      <ol className="flex space-x-2 text-sm text-gray-600">
+    <nav aria-label="Breadcrumb" className="margin-bottom">
+      <ol className="flex-space-x text-small-gray">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
 
           return (
-            <li key={index} className="flex items-center text-sm font-normal">
-              <Link href={item.href} className={`hover:underline ${isLast ? 'text-black' : 'text-[#BFC8CD]'}`}>
+            <li key={index} className="flex items-center text-small-gray">
+             
+                <Link href={item.href}className={`hover-underline ${isLast? 'text-black' : 'text-cyan'}`}>
                   {item.label}
+                
               </Link>
-              {/* Render a separator unless it's the last item */}
-              {!isLast && <span className="mx-[6px] text-[#BFC8CD]">|</span>}
+              {!isLast && <span className="margin-horizontal">|</span>}
             </li>
           );
         })}
