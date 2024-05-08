@@ -46,10 +46,12 @@ const FilterDrawer: React.FC<DrawerProps> = ({
             <div className="fixed-cover">
               <div
                 ref={drawerRef}
-                className="bg-white-width-padding-shadow flex-justify-between-items-center-margin-bottom"
+                className="bg-white-width-padding-shadow h-full 11flex-justify-between-items-center-margin-bottom"
               >
-                <IoClose onClick={() => setIsOpen(false)} /> 
-                <div className="overflow-scroll-height" style={{width:'100%'}}>{content}</div>
+                <div className="flex justify-end mb-6">
+                  <IoClose onClick={() => setIsOpen(false)} />
+                </div>
+                <div className="overflow-scroll-height">{content}</div>
               </div>
 
               <div className="flex-1 bg-gray-800 opacity-50" />

@@ -12,6 +12,7 @@ import { Container } from "../container";
 import SelectPopover from "../shared/Select";
 import GreyStrip from "./GreyStrip";
 import MobileDrawer from "./MobileDrawer";
+import "./header.css"
 
 const Header = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("en");
@@ -60,23 +61,23 @@ const Header = () => {
   ];
   return (
     <div>
-      <div className="border-b-[1px] border-[#E5E5E5]">
+      <div className="border-bottom-1 ">
         <GreyStrip />
         <Container>
           {/* Desktop Header  */}
-          <div className="xs:hidden sm:hidden md:hidden block  pb-5 pt-7">
+          <div className="desktop-header block  pb-20 pt-30">
             {/* Logo etc  */}
-            <div className="mb-10 flex items-center justify-between">
-              <div className="w-[242px]">
+            <div className="mb-40 flexJbAc">
+              <div className="headerLeft">
                 <Image src={headerleftlogo} alt={""} />
               </div>
               <Image src={LOGO} alt={""} className="" />
-              <div className="flex gap-6 items-center">
+              <div className="flexIc gap-24 ">
                 <Image src={searchNormal} alt={""} />
                 <Image src={heart} alt={""} />
                 <Image src={shoppingBag} alt={""} />
                 <Image src={profile} alt={""} />
-                <div className="mt-1">
+                <div className="mt-5">
                   <SelectPopover
                     options={options}
                     onSelect={handleSelect}
@@ -92,8 +93,8 @@ const Header = () => {
             </div>
 
             {/* Menu  */}
-            <div className="flex items-center justify-center">
-              <ul className="flex gap-12 items-center">
+            <div className="flexJcAc">
+              <ul className="flexIc gap-48">
                 {MenuItem.map((db, index) => (
                   <li key={index}>
                     <Link className="text-xl font-bold " href={`${db.link}`}>
@@ -107,7 +108,7 @@ const Header = () => {
         </Container>
       </div>
       {/* Mobile Header  */}
-      <div className="lg:hidden">
+      <div className="mobile-header">
         <MobileDrawer MenuItem={MenuItem} />
       </div>
     </div>

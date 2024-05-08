@@ -502,6 +502,17 @@ body {
   background-color: #000000;
 }
 
+.flexJbAc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flexJcAc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .flexContainer {
   display: flex;
   justify-content: center;
@@ -667,6 +678,10 @@ border-radius: 0.375rem;
   }
  }
 
+.border-bottom-1 {
+  border-bottom: 1px solid #E5E5E5;
+}
+
 @media (max-width: 768px) {
   .filter-panel{
     display: none;
@@ -705,3 +720,7 @@ width: 40%;
     display: block;
   }
 }
+
+
+
+
