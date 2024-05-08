@@ -1,18 +1,18 @@
 "use client";
 
 import Accordion from "@/app/components/Accordion";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
 import CheckboxWithLabel from "@/app/components/Checkbox";
 import NormalLabel from "@/app/components/Checkbox/NormalLabel";
+import FilterDrawer from "@/app/components/FilterDrawer";
 import HeaderFilter from "@/app/components/HeaderFilter";
 import { Container } from "@/app/components/container";
 import ProductCard from "@/app/components/productCard";
 import SelectPopover from "@/app/components/shared/Select";
+import { useState } from "react";
 import product1 from "../../assets/products/product1.png";
 import product2 from "../../assets/products/product2.png";
 import product3 from "../../assets/products/product3.png";
-import { useState } from "react";
-import FilterDrawer from "@/app/components/FilterDrawer";
-import Breadcrumbs from "@/app/components/Breadcrumbs";
 
 const Home = () => {
   const [isshow, setShow] = useState<boolean>(true);
@@ -159,14 +159,14 @@ const Home = () => {
   return (
     <div className="pb-10">
       <Container>
-        <div className="lg:hidden pt-4">
+        <div className="brd-wrp">
           <Breadcrumbs items={breadcrumbItems} />
         </div>
-        <div className="max-w-[748px] mx-auto text-center pb-6 lg:py-12">
-          <h1 className="font-normal text-2xl leading-7 lg:text-[60px] mb-5 lg:leading-[72px] font-simplon">
+        <div className="hero-wrp">
+          <h1 className="herofont1 font-simplon">
             DISCOVER OUR PRODUCTS
           </h1>
-          <h2 className="font-normal text-base leading-[22px] lg:text-[22px] lg:leading-10 font-simplon">
+          <h2 className="herofont2 font-simplon">
             Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus
             scelerisque. Dolor integer scelerisque nibh amet mi ut elementum
             dolor.
@@ -214,51 +214,14 @@ const Home = () => {
             </div>
           )}
 
-          {/* {isshow && (
-            <div className="w-[28%]">
-              <div>
-                <CheckboxWithLabel id="test" label="Customizble" />
-              </div>
-              <Accordion title="IDEAL FOR">
-                <div className="flex flex-col gap-4">
-                  <span className="text-base font-normal text-[#BFC8CD] underline font-simplon">
-                    Unselect all
-                  </span>
-                  <div>
-                    <NormalLabel id="men" label="Men" />
-                    <NormalLabel id="men" label="Women" />
-                    <NormalLabel id="men" label="Baby & Kids" />
-                  </div>
-                </div>
-              </Accordion>
-              <Accordion title="occasion">
-                {" "}
-                <div className="flex flex-col gap-4">
-                  <span className="text-base font-normal text-[#BFC8CD] underline font-simplon">
-                    Unselect all
-                  </span>
-                  <div>
-                    <NormalLabel id="men" label="Men" />
-                    <NormalLabel id="men" label="Women" />
-                    <NormalLabel id="men" label="Baby & Kids" />
-                  </div>
-                </div>
-              </Accordion>
-              <Accordion title="work">test</Accordion>
-              <Accordion title="fabric">test</Accordion>
-              <Accordion title="segment">test</Accordion>
-              <Accordion title="suitable for">test</Accordion>
-              <Accordion title="raw materials">test</Accordion>
-              <Accordion title="Pattern">test</Accordion>
-            </div>
-          )} */}
+        
 
           <div
-            className={`grid ${
+            className={`pr-wrapper ${
               isshow
-                ? "grid-cols-2 lg:grid-cols-3"
-                : "grid-cols-2 lg:grid-cols-4"
-            } gap-x-3 gap-y-6`}
+                ? "product-grid"
+                : "product-grid2"
+            }`}
           >
             {products.map((db, index) => (
               <ProductCard
