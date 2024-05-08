@@ -155,7 +155,9 @@ body {
   font-weight: bold;
   text-transform: uppercase;
 }
-
+.w-auto {
+  width: auto;
+}
 .text-large-bold-uppercase2 {
   font-size: 1rem; /* Adjust as needed */
   font-weight: 400;
@@ -285,6 +287,9 @@ body {
   cursor: pointer;
   transition: background-color 150ms ease-in-out;
 }
+.select-large{
+  width: 200px;
+}
 
 .text-red {
   background-color: red; /* Adjust as needed */
@@ -321,6 +326,9 @@ body {
 @media (max-width: 1024px) {
  .max-width {
     max-width: 768px; /* Adjust as needed */
+  }
+  .select-large{
+    width: 200px;
   }
 }
 

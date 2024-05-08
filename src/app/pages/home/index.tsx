@@ -195,7 +195,7 @@ const Home = () => {
           <SelectPopover
             options={options}
             onSelect={handleSelect}
-            className={" lg:w-[200px]"}
+            className={"select-large"}
           />
           {/* <DropdownMenu
             selectedOption={selectedLanguage}

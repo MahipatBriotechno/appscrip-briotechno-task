@@ -1,7 +1,7 @@
 // components/SelectPopover.js
 import { useState } from "react";
-
-const SelectPopover = ({ options, onSelect,className }: any) => {
+import "./shared.css";
+const SelectPopover = ({ options, onSelect, className }: any) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<any>(null);
 
@@ -15,7 +15,7 @@ const SelectPopover = ({ options, onSelect,className }: any) => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`py-2 flex uppercase items-center gap-2 px-4  ${className} rounded-md focus:outline-none text-base font-bold`}
+        className={` ${className} select-wrapper`}
       >
         {selectedOption ? selectedOption.label : options[0]?.label}{" "}
         <svg
@@ -35,12 +35,12 @@ const SelectPopover = ({ options, onSelect,className }: any) => {
         </svg>
       </button>
       {isOpen && (
-        <div className="absolute  top-full z-10 left-0 mt-1 w-full bg-white shadow-box rounded-md">
+        <div className="select-popover-wrp">
           {options.map((option: any) => (
             <button
               key={option.value}
               onClick={() => handleSelect(option)}
-              className={`flex items-center hover:bg-gray-100 justify-end gap-2 w-full uppercase py-2 px-4 text-right text-base focus:outline-none ${
+              className={`popover-btn ${
                 selectedOption === option ? "font-bold" : ""
               }`}
             >
