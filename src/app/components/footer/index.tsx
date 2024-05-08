@@ -16,8 +16,6 @@ import Accordion from "../Accordion";
 
 import { GoDotFill } from "react-icons/go";
 
-
-
 const Footer = () => {
   const FooterTitle = ({ title }: { title: string }) => {
     return <h1 className="text-xl font-bold leading-6">{title}</h1>;
@@ -77,7 +75,7 @@ const Footer = () => {
                   +44 221 133 5360
                 </span>
                 <span className="text-base text-white font-normal font-simplon flex gap-2 items-center">
-                 <GoDotFill className="lg:hidden" /> customercare@mettamuse.com
+                  <GoDotFill className="lg:hidden" /> customercare@mettamuse.com
                 </span>
               </div>
             </div>
@@ -101,11 +99,11 @@ const Footer = () => {
           <div className="flex flex-col gap-4">
             <FooterTitle title="mettā muse" />
             <div className="flex gap-3 flex-col">
-              {mettaMuse.map((db: any,index:any) => {
+              {mettaMuse.map((db: any, index: any) => {
                 return (
                   <Link
-                    href={db.link}
                     key={index}
+                    href={db.link}
                     className="text-white text-lg font-normal"
                   >
                     {db.title}
@@ -117,11 +115,11 @@ const Footer = () => {
           <div className="flex flex-col gap-4 ">
             <FooterTitle title="QUICK LINKS" />
             <div className="flex gap-3 flex-col">
-              {quickLinks.map((db: any,index:any) => {
+              {quickLinks.map((db: any, index: any) => {
                 return (
                   <Link
-                    href={db.link}
                     key={index}
+                    href={db.link}
                     className="text-white text-lg font-normal"
                   >
                     {db.title}
@@ -155,14 +153,14 @@ const Footer = () => {
         {/* 2 - For Mobile */}
         <div className="grid lg:hidden  lg:mt-16 ">
           <div className="flex flex-col gap-4">
-            <Accordion title="mettā muse">
+            <Accordion isFooter="true" title="mettā muse">
               {/* <FooterTitle title="mettā muse" /> */}
               <div className="flex gap-3 flex-col">
-                {mettaMuse.map((db: any,index:any) => {
+                {mettaMuse.map((db: any, index:any) => {
                   return (
                     <Link
+                    key={index}
                       href={db.link}
-                      key={index}
                       className="text-white text-lg font-normal"
                     >
                       {db.title}
@@ -173,14 +171,14 @@ const Footer = () => {
             </Accordion>
           </div>
           <div className="flex flex-col gap-4">
-            <Accordion title="QUICK LINKS">
+            <Accordion isFooter="true" title="QUICK LINKS">
               {/* <FooterTitle title="QUICK LINKS" /> */}
               <div className="flex gap-3 flex-col">
-                {quickLinks.map((db: any,index:any) => {
+                {quickLinks.map((db: any, index:any) => {
                   return (
                     <Link
+                    key={index}
                       href={db.link}
-                      key={index}
                       className="text-white text-lg font-normal"
                     >
                       {db.title}
@@ -192,12 +190,12 @@ const Footer = () => {
           </div>
           <div className="flex flex-col ">
             <div className="flex flex-col gap-4">
-            <Accordion title="FOLLOW US">
-              {/* <FooterTitle title="FOLLOW US" /> */}
-              <div className="flex gap-3">
-                <Image src={Insta} alt="insta" width={35} height={35} />
-                <Image src={Linkdin} alt="linkdin" width={35} height={35} />
-              </div>
+              <Accordion isFooter="true" title="FOLLOW US">
+                {/* <FooterTitle title="FOLLOW US" /> */}
+                <div className="flex gap-3">
+                  <Image src={Insta} alt="insta" width={35} height={35} />
+                  <Image src={Linkdin} alt="linkdin" width={35} height={35} />
+                </div>
               </Accordion>
             </div>
             <div className="flex flex-col gap-5 border-t-[1px] pt-8">
