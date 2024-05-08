@@ -21,6 +21,13 @@
   transition-duration: 300ms;
   transition-duration: 300ms;
 }
+.inner-img {
+    transition: 0.3s;
+  }
+  
+  .inner-img:hover {
+    transform: scale(1.1);
+  }
 
 .new-product {
   position: absolute;

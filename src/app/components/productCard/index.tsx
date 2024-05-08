@@ -32,7 +32,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <Image
             src={image}
             alt={title}
-            className="image-transiation" // Zoom effect on hover
+            className="image-transiation inner-img" // Zoom effect on hover
             layout="responsive"
             width={300}
             height={300}
