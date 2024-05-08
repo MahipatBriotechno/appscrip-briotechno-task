@@ -587,6 +587,9 @@ max-width: 748px;
   padding-bottom: 4rem; 
   margin: 0px auto;
 }
+.filter-tab{
+  display: block;
+}
 @media (min-width: 1024px) { 
   .brd-wrp{
     display: none; 
@@ -601,8 +604,66 @@ max-width: 748px;
   }
  
  }
+ .filter-tab-mobile{
+  display: none;
+ }
+ .filter-wrp{
+  
+  display: flex; 
+
+  margin-bottom: 1.5rem; 
+  justify-content: space-between; 
+  align-items: center;
+  border-color: #E5E5E5;
+  border-top: 1px solid #E5E5E5;
+  border-bottom: 1px solid #E5E5E5;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem; 
+ }
+ .font-bold {
+  font-weight: 700;
+}
+.flex {
+  display: flex;
+}
+.gap-5 {
+  gap: 1.25rem/* 20px */;
+}
+.border-r-whidth{
+  border-right-width: 1px;
+}
+ .text-sm {
+  font-size: 0.875rem/* 14px */;
+  line-height: 1.25rem/* 20px */;
+}
+.filter-panel{
+  width: 28%;
+}
+@media (max-width: 1024px) { 
+  .filter-panel{
+    display: none;
+  }
+ }
+
 @media (max-width: 768px) {
+  .filter-panel{
+    display: none;
+  }
+  .filter-wrp{
+    padding-top: 0.5rem;
+  padding-bottom: 0.5rem; 
+  }
+  .filter-tab-mobile{
+    display: flex; 
+justify-content: center; 
+align-items: center; 
+width: 40%;
+  }
+  .filter-tab{
+    display:none;
+  }
   .hero-wrp{
+    padding-top: 1.5rem; 
     padding-bottom: 1.5rem; 
   text-align: center; 
   max-width: 748px;

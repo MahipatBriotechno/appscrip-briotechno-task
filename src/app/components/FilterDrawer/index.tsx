@@ -44,8 +44,8 @@ const FilterDrawer: React.FC<DrawerProps> = ({ content, isOpen, setIsOpen }) => 
               ref={drawerRef}
               className="bg-white-width-padding-shadow flex-justify-between-items-center-margin-bottom"
             >
-              <div></div>
-              <IoClose onClick={() => setIsOpen(false)} />
+              
+              {/* <IoClose onClick={() => setIsOpen(false)} /> */}
               <div className="overflow-scroll-height">
                 {content}
               </div>

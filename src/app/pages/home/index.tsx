@@ -109,7 +109,7 @@ const Home = () => {
         <div>
           <CheckboxWithLabel id="test" label="Customizble" />
         </div>
-        <Accordion title="IDEAL FOR" isShow="true" isFooter={false} >
+        <Accordion title="IDEAL FOR" isShow="true" isFooter={false}>
           <div className="flex flex-col gap-4">
             <span className="text-base font-normal text-[#BFC8CD] underline font-simplon">
               Unselect all
@@ -163,9 +163,7 @@ const Home = () => {
           <Breadcrumbs items={breadcrumbItems} />
         </div>
         <div className="hero-wrp">
-          <h1 className="herofont1 font-simplon">
-            DISCOVER OUR PRODUCTS
-          </h1>
+          <h1 className="herofont1 font-simplon">DISCOVER OUR PRODUCTS</h1>
           <h2 className="herofont2 font-simplon">
             Lorem ipsum dolor sit amet consectetur. Amet est posuere rhoncus
             scelerisque. Dolor integer scelerisque nibh amet mi ut elementum
@@ -175,8 +173,8 @@ const Home = () => {
       </Container>
       {/* Header Filter  */}
       <Container>
-        <div className="flex justify-between border-t-[1px] border-b-[1px] border-[#E5E5E5] py-2 lg:py-6 mb-6">
-          <div className="hidden lg:block">
+        <div className="filter-wrp">
+          <div className="filter-tab">
             <HeaderFilter
               items={[
                 { label: "3425 Items", href: "" },
@@ -185,13 +183,10 @@ const Home = () => {
               clickFilter={() => setShow(!isshow)}
             />
           </div>
-          <div
-            className="lg:hidden w-[40%] flex items-center justify-center"
-            onClick={() => setIsOpen(!isOpen)}
-          >
+          <div className="filter-tab-mobile" onClick={() => setIsOpen(!isOpen)}>
             <h2 className=" text-sm font-bold">FILTER</h2>
           </div>
-          <div className="border-r-[1px]" />
+          <div className="border-r-whidth" />
           <SelectPopover
             options={options}
             onSelect={handleSelect}
@@ -209,18 +204,14 @@ const Home = () => {
           {/* Filter  */}
 
           {isshow && (
-            <div className="w-[28%] xs:hidden  sm:hidden md:hidden ">
+            <div className="w-[28%] xs:hidden  sm:hidden md:hidden">
               <FilterContent />
             </div>
           )}
 
-        
-
           <div
             className={`pr-wrapper ${
-              isshow
-                ? "product-grid"
-                : "product-grid2"
+              isshow ? "product-grid" : "product-grid2"
             }`}
           >
             {products.map((db, index) => (
