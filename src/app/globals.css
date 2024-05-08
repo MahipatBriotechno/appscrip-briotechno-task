@@ -373,6 +373,9 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.25rem; /* Adjust as needed */
+  flex-direction: row-reverse;
+    align-items: start;
+
 }
 
 .overflow-scroll-height {
