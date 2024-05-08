@@ -109,7 +109,7 @@ const Home = () => {
         <div>
           <CheckboxWithLabel id="test" label="Customizble" />
         </div>
-        <Accordion title="IDEAL FOR" isShow="true">
+        <Accordion title="IDEAL FOR" isShow="true" isFooter={false} >
           <div className="flex flex-col gap-4">
             <span className="text-base font-normal text-[#BFC8CD] underline font-simplon">
               Unselect all

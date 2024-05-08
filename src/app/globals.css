@@ -156,6 +156,12 @@ body {
   text-transform: uppercase;
 }
 
+.text-large-bold-uppercase2 {
+  font-size: 1rem; /* Adjust as needed */
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
 .opacity-seventy-five {
   opacity: 0.75;
 }
