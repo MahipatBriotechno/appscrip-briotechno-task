@@ -14,9 +14,9 @@ const WishlistHeartButton = () => {
     <button
       type="button"
       onClick={toggleWishlist}
-      className={` py-0 px-0 rounded-md flex items-center justify-center ${
+      className={`wishlist-wrp ${
         isInWishList ? "text-red-600" : "text-gray-400"
-      } hover:bg-gray-100`}
+      } bg-gray-100`}
     >
       <svg
         width="24"
