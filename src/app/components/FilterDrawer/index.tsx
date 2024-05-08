@@ -9,7 +9,11 @@ interface DrawerProps {
   setIsOpen: any;
 }
 
-const FilterDrawer: React.FC<DrawerProps> = ({ content, isOpen, setIsOpen }) => {
+const FilterDrawer: React.FC<DrawerProps> = ({
+  content,
+  isOpen,
+  setIsOpen,
+}) => {
   // const [isOpen, setIsOpen] = useState(false);
   const drawerRef = useRef<HTMLDivElement | null>(null);
 
@@ -36,27 +40,26 @@ const FilterDrawer: React.FC<DrawerProps> = ({ content, isOpen, setIsOpen }) => 
 
   return (
     <div className="padding-border">
-    <Container>
-      {isOpen &&
-        createPortal(
-          <div className="fixed-cover">
-            <div
-              ref={drawerRef}
-              className="bg-white-width-padding-shadow flex-justify-between-items-center-margin-bottom"
-            >
-              <div></div>
-              <IoClose onClick={() => setIsOpen(false)} />
-              <div className="overflow-scroll-height">
-                {content}
+      <Container>
+        {isOpen &&
+          createPortal(
+            <div className="fixed-cover">
+              <div
+                ref={drawerRef}
+                className="bg-white-width-padding-shadow h-full 11flex-justify-between-items-center-margin-bottom"
+              >
+                <div className="flex justify-end mb-6">
+                  <IoClose onClick={() => setIsOpen(false)} />
+                </div>
+                <div className="overflow-scroll-height">{content}</div>
               </div>
-            </div>
 
-            <div className="flex-1 bg-gray-800 opacity-50" />
-          </div>,
-          document.body
-        )}
-    </Container>
-  </div>
+              <div className="flex-1 bg-gray-800 opacity-50" />
+            </div>,
+            document.body
+          )}
+      </Container>
+    </div>
   );
 };
 

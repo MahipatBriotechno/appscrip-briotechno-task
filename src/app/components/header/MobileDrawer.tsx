@@ -42,15 +42,15 @@ const Drawer: React.FC<DrawerProps> = ({ MenuItem }) => {
   }, [isOpen]);
 
   return (
-    <div className="py-3 border-b-[1px] border-[#E5E5E5]">
+    <div className="py-3 headerBorder">
       <Container>
-        <div className=" flex items-center justify-between">
-          <div className="flex gap-3 items-center">
+        <div className=" flexJbAc">
+          <div className="flexIc gap-3">
             <FiMenu onClick={() => setIsOpen(!isOpen)} />
             <Image src={headerleftlogo} alt={""} className="w-5 h-5" />
           </div>
-          <Image src={LOGO} alt={""} className="w-[61px] h-6" />
-          <div className="flex gap-4 items-center">
+          <Image src={LOGO} alt={""} className="w-61 h-6" />
+          <div className="flexIc gap-4 ">
             <Image src={searchNormal} alt={""} className="w-5 h-5" />
             <Image src={heart} alt={""} className="w-5 h-5" />
             <Image src={shoppingBag} alt={""} className="w-5 h-5" />

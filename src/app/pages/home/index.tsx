@@ -87,7 +87,7 @@ const Home = () => {
 
   const breadcrumbItems = [
     { label: "HOME", href: "/" },
-    { label: "SHOP", href: "/shop" },
+    { label: "SHOP", href: "/" },
   ];
 
   const options = [
